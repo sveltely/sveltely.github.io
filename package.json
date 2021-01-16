@@ -1,0 +1,9 @@
+{
+  "name": "getting-started-with-svelte",
+  "scripts": {
+    "start": "browser-sync . --watch"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.13"
+  }
+}
