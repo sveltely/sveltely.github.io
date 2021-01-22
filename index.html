@@ -14,16 +14,24 @@
     <link rel="stylesheet" href="dist/theme/moon.css" id="theme" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link
-      rel="stylesheet"
-      href="plugin/highlight/night-owl.css"
-      id="highlight-theme"
-    />
+    <link rel="stylesheet" href="plugin/highlight/night-owl.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section
+          data-markdown="example.md"
+          data-separator="^---"
+          data-separator-vertical="^\+\+\+"
+          data-separator-notes="^Note:"
+          data-charset="iso-8859-15"
+        >
+          <!--
+        Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
+        For a regex that supports all operating systems, use `\r?\n` instead of `\n`.
+    -->
+        </section>
+        <!-- <section
           data-markdown
           data-separator="---"
           data-separator-vertical="^\n\n"
@@ -35,6 +43,10 @@
 
             ## Who are we?
             software developers
+
+
+            ## We like cats?
+            yes
             ---
             ## Code
             ```javascript
@@ -45,7 +57,7 @@
             ---
             ## Thanks
           </textarea>
-        </section>
+        </section> -->
       </div>
     </div>
 
