@@ -111,6 +111,9 @@ button. You can use `on:event_name` to bind an element to any dom events.
 
 ### Reactive Statements
 
+- 🤖 `$: squared = count * count;`
+- 🤖 `$: console.log(squared);`
+
 ```svelte
 <script>
   let count = 0;
@@ -179,6 +182,9 @@ identifying each object.
 +++
 
 ### Conditional Rendering
+
+- ❓ `{#if} {/if}`
+- ❔ `{#if} {:else} {/if}`
 
 ```svelte
 <script>
