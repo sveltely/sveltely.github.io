@@ -25,8 +25,8 @@ Leona 🎙️ Chows 🎙️ Braden
 npx degit sveltejs/template your-project-name
 ```
 
-Notes: You can get a project template by running this command. It's similar to what
-`create-react-app` does for you.
+Notes: You can get a project template by running this command. It's similar to
+what `create-react-app` does for you.
 
 +++
 
@@ -51,9 +51,9 @@ Notes: You can get a project template by running this command. It's similar to w
 
 Notes:
 
-You can keep your JavaScript, styles and markup relating to a component all in the same file. Styles
-a scoped to the component so you don't have to write crazy class names to target an element on the
-page.
+You can keep your JavaScript, styles and markup relating to a component all in
+the same file. Styles a scoped to the component so you don't have to write crazy
+class names to target an element on the page.
 
 ---
 
@@ -104,8 +104,8 @@ page.
 
 [Counter example](https://svelte.dev/repl/0031b184adc04c9da35f907efb7b0c28?version=3.32.0)
 
-Notes: Here we are calling the increment function when the user clicks the button. You can use
-`on:event_name` to bind an element to any dom events.
+Notes: Here we are calling the increment function when the user clicks the
+button. You can use `on:event_name` to bind an element to any dom events.
 
 +++
 
@@ -127,10 +127,11 @@ Notes: Here we are calling the increment function when the user clicks the butto
 
 [example](https://svelte.dev/repl/3896303961a74c338aea0bd2af629656?version=3.32.0)
 
-Notes: With reactive statements we don't need to listen for events to update a value.
+Notes: With reactive statements we don't need to listen for events to update a
+value.
 
-The `$:` indicates the this line only runs when any variables in the statement, or on the right side
-of the equals are changed.
+The `$:` indicates the this line only runs when any variables in the statement,
+or on the right side of the equals are changed.
 
 ---
 
@@ -138,11 +139,11 @@ of the equals are changed.
 
 +++
 
-### Template Logic
+### Blocks / Template Logic
 
-- List rendering {#each} {/each}
-- conditional rendering {#if} {/if}
-- Promises {#await promise then something} {/await}
+- 🧩 `{#each} {/each}`
+- 🧩 `{#if} {/if}`
+- 🧩 `{#await} {/await}`
 
 +++
 
@@ -165,6 +166,15 @@ of the equals are changed.
 ```
 
 [example](https://svelte.dev/repl/8c60289cdbde409eab41811e09f779fc?version=3.32.0)
+
+Notes: You can iterate over a list of objects very easily in Svelte using the
+`each` block.
+
+You can say `each animals as animal` and then have access to the animal object
+inside the `each` block.
+
+The round parentheses at the end of the `each` block are for a unique key
+identifying each object.
 
 +++
 
