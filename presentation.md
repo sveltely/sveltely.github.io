@@ -30,23 +30,28 @@ what `create-react-app` does for you.
 
 +++
 
+### Components
+
+- Single File Components
+- Other Component features
+
++++
+
 ### Single File Components
 
 ```html
-<!-- Counter.svelte -->
-
 <script>
-  let count = 51;
+  let number = 51;
 </script>
+
+<h1>Favorite Number</h1>
+<p>{number}</p>
 
 <style>
   p {
-    color: deepseagreen;
+    color: maroon;
   }
 </style>
-
-<h1>Counter</h1>
-<p>{count}</p>
 ```
 
 Notes:
@@ -55,22 +60,31 @@ You can keep your JavaScript, styles and markup relating to a component all in
 the same file. Styles a scoped to the component so you don't have to write crazy
 class names to target an element on the page.
 
++++
+
+### Component Features
+
+- ♻ Importing other components
+- 📁 Props
+- 🎯 Scoped styles
+
+[Greeting Machine example](https://svelte.dev/repl/ec0f9c51e72947ad8da988be01d9c05d?version=3.32.0)
+
 ---
 
 ## 🐱 Leona
 
 +++
 
-### Inside components
+### Reactivity
 
-- binding variables
-- reactive statements `$:`
-- events
-- style class binding
+- Binding variables
+- Events
+- Reactive statements
 
 +++
 
-### Binding Input
+### Binding Variables
 
 ```svelte
 <script>
@@ -84,7 +98,7 @@ class names to target an element on the page.
 <input type="text" bind:value={name} />
 ```
 
-[Example](https://svelte.dev/repl/373f2a9ce2c04e17abcdb2ca74773b36?version=3.32.0)
+[Text input example](https://svelte.dev/repl/373f2a9ce2c04e17abcdb2ca74773b36?version=3.32.0)
 
 +++
 
@@ -111,9 +125,6 @@ button. You can use `on:event_name` to bind an element to any dom events.
 
 ### Reactive Statements
 
-- 🤖 `$: squared = count * count;`
-- 🤖 `$: console.log(squared);`
-
 ```svelte
 <script>
   let count = 0;
@@ -128,7 +139,7 @@ button. You can use `on:event_name` to bind an element to any dom events.
 <button on:click={increment}>Increment</button>
 ```
 
-[example](https://svelte.dev/repl/3896303961a74c338aea0bd2af629656?version=3.32.0)
+[Squared Counter example](https://svelte.dev/repl/3896303961a74c338aea0bd2af629656?version=3.32.0)
 
 Notes: With reactive statements we don't need to listen for events to update a
 value.
@@ -142,11 +153,13 @@ or on the right side of the equals are changed.
 
 +++
 
-### Blocks / Template Logic
+### Logic
 
-- 🧩 `{#each} {/each}`
-- 🧩 `{#if} {/if}`
-- 🧩 `{#await} {/await}`
+| Block      | Syntax                |
+| ---------- | --------------------- |
+| Lists      | `{#each} {/each}`     |
+| Conditions | `{#if} {:else} {/if}` |
+| Promises   | `{#await} {/await}`   |
 
 +++
 
@@ -168,7 +181,7 @@ or on the right side of the equals are changed.
 {/each}
 ```
 
-[example](https://svelte.dev/repl/8c60289cdbde409eab41811e09f779fc?version=3.32.0)
+[Animal example](https://svelte.dev/repl/8c60289cdbde409eab41811e09f779fc?version=3.32.0)
 
 Notes: You can iterate over a list of objects very easily in Svelte using the
 `each` block.
@@ -182,9 +195,6 @@ identifying each object.
 +++
 
 ### Conditional Rendering
-
-- ❓ `{#if} {/if}`
-- ❔ `{#if} {:else} {/if}`
 
 ```svelte
 <script>
@@ -209,7 +219,7 @@ identifying each object.
 </button>
 ```
 
-[example](https://svelte.dev/repl/c23cb5f4607a46a8afbfcce076f78702?version=3.32.0)
+[Cat example](https://svelte.dev/repl/c23cb5f4607a46a8afbfcce076f78702?version=3.32.0)
 
 +++
 
@@ -236,16 +246,30 @@ identifying each object.
 {/await}
 ```
 
-[example](https://svelte.dev/repl/d457fcce56894002a8f0b9b348f0f6d1?version=3.32.0)
+[Fetch example](https://svelte.dev/repl/5c1c2870c22e4fbdb6f88bc00e595d7c?version=3.32.0)
 
 ---
 
-## 🧪 Demo 💥
+### 🧪 Repair List example 💥
 
 [`https://sveltely.github.io/todo`](https://sveltely.github.io/todo)
 
-Any questions?
++++
 
----
+## What's next?
 
-# Thank You! 🎉
+![Our Slides](./qr.png)
+
+- 🎞️ Our slides https://sveltely.github.io
+- 🔥 [Official Svelte tutorial](https://svelte.dev/tutorial/basics)
+
+Notes: We talked about components, reactiviity and logic. Hopefully you're
+interested
+
++++
+
+## Any questions?
+
++++
+
+# Thanks for listening
