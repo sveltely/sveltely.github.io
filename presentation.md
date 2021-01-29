@@ -181,7 +181,7 @@ or on the right side of the equals are changed.
 {/each}
 ```
 
-[Animals example](https://svelte.dev/repl/8c60289cdbde409eab41811e09f779fc?version=3.32.0)
+[Animals example](https://svelte.dev/repl/6c70f213b31f4f9485700cb65630ea2d?version=3.32.0)
 
 Notes: You can iterate over a list of objects very easily in Svelte using the
 `each` block.
