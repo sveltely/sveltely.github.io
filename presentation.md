@@ -290,14 +290,16 @@ _CLICK BUTTON_
 
 So you can see the `squared` variable is keeping in sync with the `count`.
 
+That was a little bit about reactivity works in Svelte, now I'm gonna turn it
+over to Chows.
+
 ---
 
 ## 🐶 Chows
 
 Notes:
 
-That was a little bit about Svelte reactivity, now I'm gonna turn it over to
-Chows.
+Thanks Leona
 
 +++
 
@@ -311,8 +313,8 @@ Chows.
 
 Notes:
 
-Thanks Leona, now I'll talk about some of the blocks you can use in the HTML
-part of your component.
+Now I'll talk about some of the blocks you can use in the HTML part of your
+component.
 
 We have the `each` block for list rendering, and `if else` block for conditional
 rendering, and also an `await` block that can handle data returned by a promise.
@@ -427,7 +429,8 @@ That's all I have to say, about template logic, now Braden can wrap things up.
 
 Notes:
 
-So, we saw how we can use single file components to organize our applications.
+Thanks Chows, so we saw how we can use single file components to organize our
+applications.
 
 We saw how some of the intereactivity works in Svelte, and how we can use
 different blocks for data in our templates.
