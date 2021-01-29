@@ -33,8 +33,9 @@ It will take 10 - 15 minutes. Braden will start talking about the development
 environment and Svelte components. Then Leona will talk about reactivity and I
 will talk about template logic.
 
-When we are finished talking, Leona will give a short demo and we will answer
-any questions for you.
+When we are finished talking, we will answer any questions for you.
+
+Now I'm going to turn it over to Braden.
 
 ---
 
@@ -42,7 +43,7 @@ any questions for you.
 
 Notes:
 
-Now I'm going to turn it over to Braden.
+Thank you Chows
 
 +++
 
@@ -60,17 +61,15 @@ npm run dev
 
 Notes:
 
-Thank you Chows, now I'm going to talk about the local development environment
-for Svelte and a bit about how components work.
+Now I'm going to talk about the local development environment for Svelte and a
+bit about how components work.
 
-You can get a project template by running the first command. This is similar to
-what `create-react-app` does for you.
+You can download a basic project template by running the top command. This is
+similar to what `create-react-app` does for you.
 
-You can then change directories into your new project folder and run
-`npm install` to get all the dependencies.
+You can then just change into the new folder and install the dependencies.
 
-Once that's finished installing you can do `npm run dev` to start the local
-development server.
+And `npm run dev` will start a server on `localhost:5000`
 
 +++
 
@@ -95,13 +94,11 @@ development server.
 
 Notes:
 
-In Svelte, you can write your JavaScript, CSS and HTML that relate to a
-component all in one `.svelte` file.
+In Svelte, you can write your JavaScript, CSS and HTML that are related all in
+one `.svelte` file.
 
-If you take a look in the source directory, you'll see a component called
-`App.svelte`.
-
-This is the top level component.
+This is how it usually looks, you can use your JavaScript variables directly in
+the HTML with curly braces.
 
 +++
 
@@ -118,12 +115,12 @@ Notes:
 Like in React, Svelte has the idea of nesting components and passing in data
 with props.
 
-A feature that I find interesting, is scoped styles.
+Components also have scoped styles.
 
-This mean that styles written in a Svelte component do not cascade outside of
-it.
+This mean that styles written in one component don't cascade outside of it.
 
-You don't have to write crazy class names to target an element on a page.
+You don't have to write crazy class names to target a specific element on a
+page.
 
 _OPEN LINK_
 
@@ -131,25 +128,30 @@ Let's check out this example.
 
 Here I have two components called `App` and `Greeting`
 
-At the top of the file I'm importing `Greeting` into my `App`
+At the top of this file I'm importing `Greeting` into my `App`
 
-On line 6 I'm passing in a property to the `Greeting` component called name, and
-its value it just a string literal.
+And in the HTML part of my `App` I'm using that `Greeting` component and passing
+in a property called name, which has a string literal value.
 
 So now I'll open up the Greeting component.
 
-Like you know in React you access the data passed in with the `props` variable.
+If you want to access the `name` property being passed in, you just need to
+declare a variable with the same name as the property.
 
-In Svelte you just declare a variable with the name as the prop and then use the
-`export` keyword in front of it to indicate that it's a prop.
+Then you use the `export` keyword in front of it to indicate that this component
+can accept a property called name.
 
-You can also set a default value that will be use if the prop is not passed in.
+You can also give that variable a default value that will be used if nothing is
+passed in.
 
 I'll just show you the scoped styles.
 
-The `h1` color in the `App` doesn't cascade into the `Greeting`.
+Back in the `App`, the `h1` color doesn't cascade into the `Greeting`.
 
-And the `Greeting` can have it's own color too.
+And the `Greeting` can still have it's own color.
+
+Ok, that was a bit about how components are structured, Leona will tell us about
+reactivity.
 
 ---
 
@@ -157,8 +159,7 @@ And the `Greeting` can have it's own color too.
 
 Notes:
 
-Ok, that was a bit about how components are structured, Leona will tell us about
-reactivity.
+OK, thanks a lot Braden.
 
 +++
 
@@ -169,8 +170,6 @@ reactivity.
 - - Reactive declarations
 
 Notes:
-
-OK, thanks a lot Braden.
 
 I'll talk about how you can handle DOM events, variable binding and reactive
 declarations in Svelte.
@@ -201,15 +200,17 @@ You can pass a handler function inside curly braces just like in React.
 
 _OPEN LINK_
 
-Here we have a `count` variable and we are incrementing it everytime the user
-clicks the button.
+Here we have a `count` variable and we are adding one it everytime we click the
+button.
+
+_CLICK BUTTON_
 
 You can also add a modifier to an event that performs additional logic.
 
 Like this one, I'll add the modifier `once` to the click event.
 
-Now the `count` will only ever increment one time, no matter how many times I
-click the button.
+Now the `count` will only increment one time, no matter how many times I click
+the button.
 
 +++
 
@@ -287,7 +288,7 @@ reactive declartion called `squared` which is related to the `count` variable.
 
 _CLICK BUTTON_
 
-So you can see that the `squared` variable is keeping in sync with the `count`.
+So you can see the `squared` variable is keeping in sync with the `count`.
 
 ---
 
@@ -374,13 +375,13 @@ property in React.
 
 Notes:
 
-Here we an array of sleeping cats, and an empty array for eating cats.
+Here we have an array of sleeping cats, and an empty array for eating cats.
 
 My button at the bottom runs the `feed` function which wakes up cats with food.
 
 I'm using an `if` block to display a message when no cats are eating.
 
-And the `else` part of the block shows which cats are eating.
+And the `else` part will show which cats are eating.
 
 +++
 
@@ -413,7 +414,7 @@ Until `fetchPerson` is resolved, the loading message will be displayed.
 
 When `fetchPerson` resolves, you can display the value inside the `then` block.
 
-That all I have to say, about template logic, now Braden can wrap things up.
+That's all I have to say, about template logic, now Braden can wrap things up.
 
 ---
 
@@ -426,7 +427,7 @@ That all I have to say, about template logic, now Braden can wrap things up.
 
 Notes:
 
-So, we saw how we can use single file components to organize out applications.
+So, we saw how we can use single file components to organize our applications.
 
 We saw how some of the intereactivity works in Svelte, and how we can use
 different blocks for data in our templates.
