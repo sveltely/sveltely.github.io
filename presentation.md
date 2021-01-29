@@ -313,8 +313,8 @@ Thanks Leona
 
 Notes:
 
-Now I'll talk about some of the blocks you can use in the HTML part of your
-component.
+Now I'll talk about some of the blocks you can use in the HTML template part of
+your component.
 
 We have the `each` block for list rendering, and `if else` block for conditional
 rendering, and also an `await` block that can handle data returned by a promise.
@@ -430,7 +430,7 @@ Notes:
 
 Thanks Chows, so we saw how we can use single file components to organize our
 applications, we saw how variables can be reactive in Svelte, and how we can use
-different blocks for data in our templates.
+different blocks for data in our HTML templates.
 
 But there are lots more interesting features that we didn't talk about.
 
