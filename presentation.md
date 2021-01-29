@@ -26,7 +26,6 @@ there is no virtual DOM.
 - 1️⃣ Local Dev / Components (Braden)
 - 2️⃣ Reactivity (Leona)
 - 3️⃣ Template Logic (Chows)
-- 4️⃣ Questions
 
 Notes:
 
