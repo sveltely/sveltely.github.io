@@ -10,13 +10,14 @@ Good morning, thanks for being here.
 
 We are group 7. We have Braden, Leona and myself Chows.
 
-Today we are going to give a brief overview of the javascript framework Svelte.
+Since we have been learning React recently, today we are going to give a brief
+overview of the javascript framework Svelte.
 
 Svelte is interesting because it makes writing a reactive application easier to
 understand and with much less boilerplate code than React.
 
-It compiles the code you write into vanilla JavaScript for the browser to run
-(no virtual DOM).
+It compiles the code you write into vanilla JavaScript for the browser to run,
+there is no virtual DOM.
 
 +++
 
@@ -29,9 +30,9 @@ It compiles the code you write into vanilla JavaScript for the browser to run
 
 Notes:
 
-It will take 10 - 15 minutes. Braden will start talking about the development
-environment and Svelte components. Then Leona will talk about reactivity and I
-will talk about template logic.
+Our presentation will take 10 - 15 minutes. Braden will start talking about the
+development environment and Svelte components. Then Leona will talk about
+reactivity and I will talk about template logic.
 
 When we are finished talking, we will answer any questions for you.
 
@@ -420,6 +421,22 @@ That's all I have to say, about template logic, now Braden can wrap things up.
 
 ---
 
+## In Summary
+
+- - Single File Components
+- - Reactivity
+- - Template Logic
+
+Notes:
+
+Thanks Chows, so we saw how we can use single file components to organize our
+applications, we saw how variables can be reactive in Svelte, and how we can use
+different blocks for data in our templates.
+
+But there are lots more interesting features that we didn't talk about.
+
+---
+
 ## Thanks
 
 ![Our Slides](./qr.png)
@@ -429,17 +446,11 @@ That's all I have to say, about template logic, now Braden can wrap things up.
 
 Notes:
 
-Thanks Chows, so we saw how we can use single file components to organize our
-applications.
+That brings us to the end of our presentation, thanks for listening.
 
-We saw how some of the intereactivity works in Svelte, and how we can use
-different blocks for data in our templates.
-
-There are lots more interesting features that we didn't talk about.
-
-Thanks for listening, and if you thought any of what we showed you looked cool,
-then we encourage you to read through the official Svelte tutorial, it does a
-good job of explaining things.
+If you thought any of what we showed you looked cool, then we encourage you to
+read through the Official Svelte tutorial, it does a really good job of
+explaining different concepts.
 
 ---
 
