@@ -25,7 +25,7 @@ It compiles the code you write into vanilla JavaScript for the browser to run
 - 1️⃣ Local Dev / Components (Braden)
 - 2️⃣ Reactivity (Leona)
 - 3️⃣ Template Logic (Chows)
-- 4️⃣ Demo + Questions
+- 4️⃣ Questions
 
 Notes:
 
@@ -69,7 +69,7 @@ similar to what `create-react-app` does for you.
 
 You can then just change into the new folder and install the dependencies.
 
-And `npm run dev` will start a server on `localhost:5000`
+`npm run dev` will start a server on `localhost:5000`
 
 +++
 
