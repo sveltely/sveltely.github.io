@@ -19,20 +19,27 @@ Leona 🎙️ Chows 🎙️ Braden
 
 +++
 
-### A basic project template
+### Local Development
 
 ```shell
 npx degit sveltejs/template your-project-name
+
+cd your-project-name
+
+npm install
+
+npm run dev
 ```
 
-Notes: You can get a project template by running this command. It's similar to
-what `create-react-app` does for you.
+Notes: You can get a project template by running this command. It's similar to what
+`create-react-app` does for you.
 
 +++
 
 ### Components
 
 - Single File Components
+
 - Other Component features
 
 +++
@@ -56,19 +63,26 @@ what `create-react-app` does for you.
 
 Notes:
 
-You can keep your JavaScript, styles and markup relating to a component all in
-the same file. Styles a scoped to the component so you don't have to write crazy
-class names to target an element on the page.
+You can keep your JavaScript, styles and markup relating to a component all in the same file.
 
 +++
 
 ### Component Features
 
-- ♻ Importing other components
+- ♻ Nested Components
 - 📁 Props
 - 🎯 Scoped styles
 
 [Greeting Machine example](https://svelte.dev/repl/ec0f9c51e72947ad8da988be01d9c05d?version=3.32.0)
+
+Notes: Usually when we were in React, if you want to pass data from parent component to child
+component then you need to declare properties with `props`
+
+But in Svelte nested components, you can indicate that a variable is allowed to be passed in by
+using the `export` keyword in front of the variable declaration
+
+Styles are scoped to the component, so you don't have to write crazy class names to target an
+element on the page.
 
 ---
 
@@ -79,26 +93,10 @@ class names to target an element on the page.
 ### Reactivity
 
 - Binding variables
-- Events
 - Reactive statements
+- Events
 
-+++
-
-### Binding Variables
-
-```svelte
-<script>
-  let name = "";
-</script>
-
-<h1>
-  Hello {name || '??'}
-</h1>
-
-<input type="text" bind:value={name} />
-```
-
-[Text input example](https://svelte.dev/repl/373f2a9ce2c04e17abcdb2ca74773b36?version=3.32.0)
+Notes: OK, thanks a lot braden, now i'm gonna discuse about reactivity in Svelte,
 
 +++
 
@@ -118,12 +116,43 @@ class names to target an element on the page.
 
 [Counter example](https://svelte.dev/repl/0031b184adc04c9da35f907efb7b0c28?version=3.32.0)
 
-Notes: Here we are calling the increment function when the user clicks the
-button. You can use `on:event_name` to bind an element to any dom events.
+Notes:
+
+Here we are calling the increment function when the user clicks the button. You can use
+`on:(event_name)` to bind an element to any dom events.
 
 +++
 
-### Reactive Statements
+### Binding Variables
+
+```svelte
+<script>
+  let name = "";
+
+  const handleChange = (e) => {
+    name = e.target.value;
+  };
+</script>
+
+<h1>
+  Hello {name || "??"}
+</h1>
+
+<input type="text" on:keyup={handleChange} />
+```
+
+[Text input example](https://svelte.dev/repl/373f2a9ce2c04e17abcdb2ca74773b36?version=3.32.0)
+
+Notes: For this input element, if i wanna update the `name` variable, the only way i can do in react
+is to add onChange event listener to the input, then i also have to update the state.
+
+but in svelte, you can use the `bind: value` directive, which gives you two way data binding.
+
+When the input changes, `name` updates, and when `name` changes , the input value will change too
+
++++
+
+### Reactive Declarations
 
 ```svelte
 <script>
@@ -141,11 +170,11 @@ button. You can use `on:event_name` to bind an element to any dom events.
 
 [Squared Counter example](https://svelte.dev/repl/3896303961a74c338aea0bd2af629656?version=3.32.0)
 
-Notes: With reactive statements we don't need to listen for events to update a
-value.
+Notes: With reactive declarations we don't need to listen for events to update a value which depends
+on other variables.
 
-The `$:` indicates the this line only runs when any variables in the statement,
-or on the right side of the equals are changed.
+The `$:` indicates that this line only runs when any variables on the right side of the equals are
+changed.
 
 ---
 
@@ -183,14 +212,12 @@ or on the right side of the equals are changed.
 
 [Animals example](https://svelte.dev/repl/6c70f213b31f4f9485700cb65630ea2d?version=3.32.0)
 
-Notes: You can iterate over a list of objects very easily in Svelte using the
-`each` block.
+Notes: You can iterate over a list of objects very easily in Svelte using the `each` block.
 
-Saying `animals as animal, index` gives you access to each animal and their
-index inside the `each` block.
+Saying `animals as animal, index` gives you access to each animal and their index inside the `each`
+block.
 
-The round parentheses at the end are for a unique key, just like the key
-property in React.
+The round parentheses at the end are for a unique key, just like the key property in React.
 
 +++
 
@@ -227,22 +254,15 @@ property in React.
 
 ```svelte
 <script>
-  let vader = fetch("https://swapi.dev/api/people/4/")
-              .then((res) => res.json());
-  let planet = fetch("https://swapi.dev/api/planets/1/")
-              .then((res) => res.json());
+	let url = "https://swapi.dev/api/people/4/";
+
+  let fetchPerson = fetch(url).then((res) => res.json());
 </script>
 
-{#await vader}
-  <p>...waiting</p>
-{:then vader}
-  <h1>My name is {vader.name}</h1>
-  <p>
-    My homeworld is
-    {#await planet then planet}
-      {planet.name}
-    {/await}
-  </p>
+{#await fetchPerson}
+  <p>...loading</p>
+{:then person}
+  <h1>My name is {person.name}</h1>
 {/await}
 ```
 
@@ -250,8 +270,7 @@ property in React.
 
 Notes:
 
-If we want to fetch data from an API we can use the `{#await} {:then}` block to
-display it.
+If we want to fetch data from an API we can use the `{#await} {:then}` block to display it.
 
 We can pass a promise to the `await` block.
 
@@ -274,8 +293,7 @@ When `fetchPerson` resolves, you can display the value inside the `then` block.
 - 🎞️ Our slides https://sveltely.github.io
 - 🔥 [Official Svelte tutorial](https://svelte.dev/tutorial/basics)
 
-Notes: We talked about components, reactiviity and logic. Hopefully you're
-interested
+Notes: We talked about components, reactiviity and logic. Hopefully you're interested
 
 +++
 
