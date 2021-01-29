@@ -62,12 +62,11 @@ npm run dev
 
 Notes:
 
-You can download a basic project template by running the top command. This is
+You can download a basic project template by running the first command. This is
 similar to what `create-react-app` does for you.
 
-You can then just change into the new folder and install the dependencies.
-
-`npm run dev` will start a server on `localhost:5000`
+You just need to install the dependencies and then `npm run dev` will start a
+local server on port 5000.
 
 +++
 
@@ -95,8 +94,8 @@ Notes:
 In Svelte, you can write your JavaScript, CSS and HTML that are related all in
 one `.svelte` file.
 
-This is how it usually looks, you can use your JavaScript variables directly in
-the HTML with curly braces.
+This is how a component usually looks, you can use the JavaScript variables
+directly in the HTML with curly braces.
 
 +++
 
@@ -117,36 +116,38 @@ Components also have scoped styles.
 
 This mean that styles written in one component don't cascade outside of it.
 
-You don't have to write crazy class names to target a specific element on a
-page.
+Which means you don't have to write crazy class names to target a specific
+element on your page.
 
-_OPEN LINK_
++++
+
+### [Greeting Machine](https://svelte.dev/repl/ec0f9c51e72947ad8da988be01d9c05d?version=3.32.0)
+
+Notes:
 
 Let's check out this example.
 
 Here I have two components called `App` and `Greeting`
 
-At the top of this file I'm importing `Greeting` into my `App`
+At the top of this file I'm importing the `Greeting` component.
 
-And in the HTML part of my `App` I'm using that `Greeting` component and passing
-in a property called name, which has a string literal value.
+In my HTML I'm using the `Greeting` and passing in a property called name, which
+just has a string literal value.
 
-So now I'll open up the Greeting component.
+Now I'll open up the Greeting component.
 
-If you want to access the `name` property being passed in, you just need to
-declare a variable with the same name as the property.
+If we want to access the `name` property that we passed in, you need to declare
+a variable with the same name as the property.
 
 Then you use the `export` keyword in front of it to indicate that this component
-can accept a property called name.
+can accept that property.
 
 You can also give that variable a default value that will be used if nothing is
 passed in.
 
 I'll just show you the scoped styles.
 
-Back in the `App`, the `h1` color doesn't cascade into the `Greeting`.
-
-And the `Greeting` can still have it's own color.
+_UNCOMMENT THE `h1` IN `App`_
 
 Ok, that was a bit about how components are structured, Leona will tell us about
 reactivity.
