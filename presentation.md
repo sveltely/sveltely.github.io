@@ -432,7 +432,7 @@ can use different blocks to display data in our HTML templates.
 
 There are lots more interesting features that we didn't talk about.
 
----
++++
 
 ## Thanks
 
