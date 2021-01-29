@@ -105,8 +105,6 @@ directly in the HTML with curly braces.
 - - Props
 - - Scoped styles
 
-[Greeting Machine example](https://svelte.dev/repl/ec0f9c51e72947ad8da988be01d9c05d?version=3.32.0)
-
 Notes:
 
 Like in React, Svelte has the idea of nesting components and passing in data
