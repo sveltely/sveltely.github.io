@@ -107,9 +107,9 @@ This is the top level component.
 
 ### Component Features
 
-- ♻ Nested Components
-- 📁 Props
-- 🎯 Scoped styles
+- - Nested Components
+- - Props
+- - Scoped styles
 
 [Greeting Machine example](https://svelte.dev/repl/ec0f9c51e72947ad8da988be01d9c05d?version=3.32.0)
 
@@ -302,11 +302,19 @@ Chows.
 
 ### Template Logic
 
-| Type       | Block syntax          |
-| ---------- | --------------------- |
-| Lists      | `{#each} {/each}`     |
-| Conditions | `{#if} {:else} {/if}` |
-| Promises   | `{#await} {/await}`   |
+| Type       | Block syntax                |
+| ---------- | --------------------------- |
+| Lists      | `{#each} {/each}`           |
+| Conditions | `{#if} {:else} {/if}`       |
+| Promises   | `{#await} {:then} {/await}` |
+
+Notes:
+
+Thanks Leona, now I'll talk about some of the blocks you can use in the HTML
+part of your component.
+
+We have the `each` block for list rendering, and `if else` block for conditional
+rendering, and also an `await` block that can handle data returned by a promise.
 
 +++
 
@@ -314,29 +322,25 @@ Chows.
 
 ```svelte
 <script>
-  let animals = [
-    {photo: '🦁'},
-    {photo: '🦊'},
-    {photo: '🦄'},
-    {photo: '🐭'},
-    {photo: '🦎'},
-  ];
+  let animals = ['🦁','🦊','🦄','🐭','🦎'];
 </script>
 
 {#each animals as animal, index (index)}
-  <h1>{animal.photo}</h1>
+  <h1>{animal}</h1>
 {/each}
 ```
 
 [Animals example](https://svelte.dev/repl/6c70f213b31f4f9485700cb65630ea2d?version=3.32.0)
 
-Notes: You can iterate over a list of objects very easily in Svelte using the
-`each` block.
+Notes:
 
-Saying `animals as animal, index` gives you access to each animal and their
+You can iterate over a list of objects very easily in Svelte using the `each`
+block.
+
+Saying `animals as animal, index` gives you access to each `animal` and their
 index inside the `each` block.
 
-The round parentheses at the end are for a unique key, just like the key
+The round parentheses at the end are for a unique key, just like the `key`
 property in React.
 
 +++
@@ -368,6 +372,16 @@ property in React.
 
 [Cat example](https://svelte.dev/repl/c23cb5f4607a46a8afbfcce076f78702?version=3.32.0)
 
+Notes:
+
+Here we an array of sleeping cats, and an empty array for eating cats.
+
+My button at the bottom runs the `feed` function which wakes up cats with food.
+
+I'm using an `if` block to display a message when no cats are eating.
+
+And the `else` part of the block shows which cats are eating.
+
 +++
 
 ### Await Promises
@@ -390,37 +404,43 @@ property in React.
 
 Notes:
 
-If we want to fetch data from an API we can use the `{#await} {:then}` block to
+If we want to fetch data from an API we can use the `await then` block to
 display it.
 
 We can pass a promise to the `await` block.
 
-Until `fetchPerson` is resolved, the `loading` paragraph will be displayed.
+Until `fetchPerson` is resolved, the loading message will be displayed.
 
 When `fetchPerson` resolves, you can display the value inside the `then` block.
 
+That all I have to say, about template logic, now Braden can wrap things up.
+
 ---
 
-### 🧪 Repair List example 💥
-
-[`https://sveltely.github.io/todo`](https://sveltely.github.io/todo)
-
-+++
-
-## What's next?
+## Thanks
 
 ![Our Slides](./qr.png)
 
-- 🎞️ Our slides https://sveltely.github.io
-- 🔥 [Official Svelte tutorial](https://svelte.dev/tutorial/basics)
+- 🎞️ Our slides @ https://sveltely.github.io
+- 🔥 Tutorial @ https://svelte.dev/tutorial/basics
 
-Notes: We talked about components, reactiviity and logic. Hopefully you're
-interested
+Notes:
 
-+++
+So, we saw how we can use single file components to organize out applications.
+
+We saw how some of the intereactivity works in Svelte, and how we can use
+different blocks for data in our templates.
+
+There are lots more interesting features that we didn't talk about.
+
+Thanks for listening, and if you thought any of what we showed you looked cool,
+then we encourage you to read through the official Svelte tutorial, it does a
+good job of explaining things.
+
+---
 
 ## Any questions?
 
-+++
+Notes:
 
-# Thanks for listening
+Does anyone have any questions?
