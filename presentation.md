@@ -155,7 +155,7 @@ or on the right side of the equals are changed.
 
 ### Logic
 
-| Block      | Syntax                |
+| Type       | Block syntax          |
 | ---------- | --------------------- |
 | Lists      | `{#each} {/each}`     |
 | Conditions | `{#if} {:else} {/if}` |
@@ -168,29 +168,29 @@ or on the right side of the equals are changed.
 ```svelte
 <script>
   let animals = [
-    {id: 1, photo: '🦁'},
-    {id: 2, photo: '🦊'},
-    {id: 3, photo: '🦄'},
-    {id: 4, photo: '🐭'},
-    {id: 5, photo: '🦎'},
+    {photo: '🦁'},
+    {photo: '🦊'},
+    {photo: '🦄'},
+    {photo: '🐭'},
+    {photo: '🦎'},
   ];
 </script>
 
-{#each animals as animal (animal.id)}
+{#each animals as animal, index (index)}
   <h1>{animal.photo}</h1>
 {/each}
 ```
 
-[Animal example](https://svelte.dev/repl/8c60289cdbde409eab41811e09f779fc?version=3.32.0)
+[Animals example](https://svelte.dev/repl/8c60289cdbde409eab41811e09f779fc?version=3.32.0)
 
 Notes: You can iterate over a list of objects very easily in Svelte using the
 `each` block.
 
-You can say `each animals as animal` and then have access to the animal object
-inside the `each` block.
+Saying `animals as animal, index` gives you access to each animal and their
+index inside the `each` block.
 
-The round parentheses at the end of the `each` block are for a unique key
-identifying each object.
+The round parentheses at the end are for a unique key, just like the key
+property in React.
 
 +++
 
@@ -247,6 +247,17 @@ identifying each object.
 ```
 
 [Fetch example](https://svelte.dev/repl/5c1c2870c22e4fbdb6f88bc00e595d7c?version=3.32.0)
+
+Notes:
+
+If we want to fetch data from an API we can use the `{#await} {:then}` block to
+display it.
+
+We can pass a promise to the `await` block.
+
+Until `fetchPerson` is resolved, the `loading` paragraph will be displayed.
+
+When `fetchPerson` resolves, you can display the value inside the `then` block.
 
 ---
 
