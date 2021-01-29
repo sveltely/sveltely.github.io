@@ -334,8 +334,7 @@ rendering, and also an `await` block that can handle data returned by a promise.
 
 Notes:
 
-You can iterate over a list of objects very easily in Svelte using the `each`
-block.
+You can iterate over an array very easily in Svelte using the `each` block.
 
 Saying `animals as animal, index` gives you access to each `animal` and their
 index inside the `each` block.
