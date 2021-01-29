@@ -43,7 +43,8 @@ Now I'm going to turn it over to Braden.
 
 Notes:
 
-Thank you Chows
+Thank you Chows, now I'm going to talk about the local development environment
+for Svelte and a bit about how components work.
 
 +++
 
@@ -60,9 +61,6 @@ npm run dev
 ```
 
 Notes:
-
-Now I'm going to talk about the local development environment for Svelte and a
-bit about how components work.
 
 You can download a basic project template by running the top command. This is
 similar to what `create-react-app` does for you.
