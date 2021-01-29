@@ -429,10 +429,10 @@ That's all I have to say, about template logic, now Braden can wrap things up.
 Notes:
 
 Thanks Chows, so we saw how we can use single file components to organize our
-applications, we saw how variables can be reactive in Svelte, and how we can use
-different blocks for data in our HTML templates.
+applications, we saw how variables can be reactive in Svelte, and also how we
+can use different blocks to display data in our HTML templates.
 
-But there are lots more interesting features that we didn't talk about.
+There are lots more interesting features that we didn't talk about.
 
 ---
 
@@ -449,9 +449,9 @@ That brings us to the end of our presentation, thanks for listening.
 
 If you thought any of what we showed you looked cool, then we encourage you to
 read through the Official Svelte tutorial, it does a really good job of
-explaining different concepts.
+explaining the different concepts.
 
----
++++
 
 ## Any questions?
 
